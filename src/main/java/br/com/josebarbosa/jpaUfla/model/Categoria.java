@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,6 +29,7 @@ public class Categoria {
 	@Column(unique = true)
 	private String nome; 
 	@ManyToMany(mappedBy = "categorias")
+	@JsonBackReference
 	private List<Produto> produtos = new ArrayList<>(); 
 
 }
