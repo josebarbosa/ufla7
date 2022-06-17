@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
+@Entity(name="PRODUTOS")
 public class Produto {
 
 	@Id
@@ -33,5 +35,6 @@ public class Produto {
 	@JoinTable(name="PRODUTO_CATEGORIA", 
 	joinColumns = @JoinColumn(name="produto_id"),
 	inverseJoinColumns = @JoinColumn(name="categoria_id"))
+	@JsonManagedReference
 	private List<Categoria> categorias = new ArrayList<>(); 
 }
