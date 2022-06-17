@@ -21,4 +21,9 @@ public class ProdutoService {
 	public List<Produto> findAll(){
 		return this.produtoRepository.findAll();
 	}
+	
+	public void deleteProduto(Integer id) {
+		this.produtoRepository.deleteById(id);
+		
+	}
 }

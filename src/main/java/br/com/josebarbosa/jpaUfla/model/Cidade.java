@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,5 +26,6 @@ public class Cidade {
 	private String nome; 
 	@ManyToOne
 	@JoinColumn(name="estado_id")
+	@JsonBackReference
 	private Estado estado;
 }

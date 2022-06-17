@@ -11,4 +11,6 @@ INSERT INTO ESTADOS (NOME) VALUES ('ACRE'),('ALAGOAS'),('AMAPÁ'),('AMAZONAS'),(
 INSERT INTO CIDADES (NOME, ESTADO_ID) VALUES ('São Paulo', 21), ('Marília',21), ('Florianópolis',22), ('Rio Branco',1), ('Goiânia', 9); 
 INSERT INTO CLIENTE (CPF_OU_CNPJ, EMAIL, NOME, TIPO_CLIENTE) VALUES ('01234567890','JOSE@JOSEBARBOSA.COM.BR', 'JOSÉ BARBOSA', 0),('12345678911','QUALQUER@JOSEBARBOSA.COM.BR', 'TÍCIO MÉVIO', 0),('01234567000199','JOSE@TICIO.COM.BR', 'JOSÉ TICIO', 1);
 
-INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CEP, CLIENTE_ID) VALUES ('Rua Mérvio', '45', 'casa', 'Jardim Flores', '12345-000', 1), ('Rua Casa Branca', 'sn', 'qd 1 lote 5', 'Cercadinho', '45000-000', 2), ('Rua Dom Barreto', '107', 'casa', 'Ipiranga', '31160-000',3);
+INSERT INTO ENDERECO (LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CEP, CLIENTE_ID, CIDADE_ID) VALUES ('Rua Mérvio', '45', 'casa', 'Jardim Flores', '12345-000', 1,1), ('Rua Casa Branca', 'sn', 'qd 1 lote 5', 'Cercadinho', '45000-000', 2,3), ('Rua Dom Barreto', '107', 'casa', 'Ipiranga', '31160-000',3,5);
+
+INSERT INTO TELEFONE (DDD, TELEFONE, CLIENTE_ID) VALUES ('35', '3417-1538', 1), ('61', '555-1234', 1), ('61', '5555-9999', 2), ('41', '6543-3456', 3); 

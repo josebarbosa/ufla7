@@ -1,5 +1,6 @@
 package br.com.josebarbosa.jpaUfla.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -7,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,5 +32,10 @@ public class Cliente {
 	private TipoCliente tipoCliente;
 	
 	@OneToMany(mappedBy = "cliente")
-	private List<Endereco> enderecos; 
+	@JsonManagedReference
+	private List<Endereco> enderecos = new ArrayList<>();
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "cliente")
+	private List<Telefone> telefones = new ArrayList<>();
 }
