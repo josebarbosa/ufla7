@@ -17,6 +17,9 @@ public class ClienteRepositoryImpl {
 	
 	public List<Cliente> findNome(String nome){
 		String jpql = "from Cliente where nome like :nome";
-		return manager.createQuery(jpql, Cliente.class).setParameter("nome", nome).getResultList(); 
+		return manager
+				.createQuery(jpql, Cliente.class)
+				.setParameter("nome", nome)
+				.getResultList(); 
 	}
 }
