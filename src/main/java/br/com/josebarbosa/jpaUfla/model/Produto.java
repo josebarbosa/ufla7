@@ -1,7 +1,9 @@
 package br.com.josebarbosa.jpaUfla.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -37,4 +40,7 @@ public class Produto {
 	inverseJoinColumns = @JoinColumn(name="categoria_id"))
 	@JsonManagedReference
 	private List<Categoria> categorias = new ArrayList<>(); 
+	
+	@OneToMany(mappedBy = "id.produto")
+	private Set<ItemPedido> itens = new HashSet<>();
 }
